@@ -1,0 +1,69 @@
+﻿@model IEnumerable<YatraNepal.Models.VehicleInfo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerTel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerAddr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SimNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegisteredDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerTel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerAddr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SimNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegisteredDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,21 @@
+﻿@model YatraNepal.Models.AgentInfo
+@{
+    ViewBag.Title = "AgentWall";
+}
+
+<h2>AgentWall</h2>
+<ul>
+    <li>@Html.ActionLink("Vehicles", "Index", "VehicleInfoes")
+        <ul>
+            <li>@Html.ActionLink("Add Vehicles", "Create", "VehicleInfoes")</li>
+        </ul>
+    </li>
+    <li>@Html.ActionLink("Tickets", "Index", "Tickets")</li>
+    <li>@Html.ActionLink("Users", "Index", "UserInfoes")</li>
+    <li>
+        @Html.ActionLink("Bus Stops", "Index", "Locations")
+        <ul>
+            <li>@Html.ActionLink("Add Bus Stops", "Create", "Locations")</li>
+        </ul>
+    </li>
+</ul>

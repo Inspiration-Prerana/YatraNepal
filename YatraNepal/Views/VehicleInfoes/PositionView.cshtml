@@ -1,0 +1,68 @@
+﻿@model YatraNepal.Models.Location
+
+@{
+    ViewBag.Title = "PositionView";
+}
+
+<h2>PositionView</h2>
+
+
+@*<div id="gmap" style="width: 600px; height: 400px" ></div>*@
+<div id="gmap-dropdown" style="width: 600px; height: 400px"></div>
+
+<script>
+    
+    //var eight = 80.22;
+    //var two = 28.90;
+    //new Maplace({
+    //    show_markers: true,
+    //    locations: [{
+    //        lat: eight,
+    //        lon: two,
+    //        zoom: 8
+    //    }]
+    //}).Load();
+  
+   
+        var LocsA = [
+        {
+            @*lat:,
+            lon: @model.longitude,
+            title: 'Title A1',
+            html: '<h3>{model.name}</h3>',
+            icon: 'http://maps.google.com/mapfiles/markerA.png',
+            animation: google.maps.Animation.DROP*@
+        //},
+        //{
+            lat: 44.8,
+            lon: 1.7,
+            title: 'Title B1',
+            html: '<h3>Content B1</h3>',
+            icon: 'http://maps.google.com/mapfiles/markerB.png',
+            show_infowindow: false
+        //},
+        //{
+        //    lat: 51.5,
+        //    lon: -1.1,
+        //    title: 'Title C1',
+        //    html: [
+        //        '<h3>Content C1</h3>',
+        //        '<p>Lorem Ipsum..</p>'
+        //    ].join(''),
+        //    zoom: 8,
+        ////    icon: 'http://maps.google.com/mapfiles/markerC.png'
+        }
+        ];
+         new Maplace({
+            locations: LocsA,
+            map_div: '#gmap-dropdown',
+            controls_title: 'Choose a location:',
+            listeners: {
+                click: function (map, event) {
+                    alert('That was a click!');
+                }
+            }
+        }).Load();
+
+  
+</script>

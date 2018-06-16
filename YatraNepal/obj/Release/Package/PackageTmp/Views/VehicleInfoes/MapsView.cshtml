@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "MapsView";
+}
+
+<h2>MapsPage</h2>
+<div id="googleMap" style="width:100%;height:400px;"></div>
+
+<script>
+function myMap() {
+var mapProp= {
+    center: new google.maps.LatLng(28.3949, 84.1240),
+    zoom:10,
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+</script>
+
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmA2wDNSx3W-sV86B8ERaIOGCfJU2Ywg0&callback=myMap"
+        type="text/javascript"></script>

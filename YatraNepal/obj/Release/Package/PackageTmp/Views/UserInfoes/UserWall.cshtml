@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "UserWall";
+}
+
+<h2>UserWall</h2>
+
+<ul>
+    <li>
+        @Html.ActionLink("Where do you want to go?", "Index", "Trips")
+    <ul>
+        <li>@Html.ActionLink("Book a ticket", "Create", "Tickets")</li>
+    </ul>
+</li>
+<li>@Html.ActionLink("Stations", "Locations", "PosView")</li>
+</ul>

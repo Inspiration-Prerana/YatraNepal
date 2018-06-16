@@ -1,0 +1,66 @@
+﻿@model YatraNepal.Models.Ticket
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EndLocation.strAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndLocation.strAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartLocation.strAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartLocation.strAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trip.ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trip.ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SeatNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeatNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

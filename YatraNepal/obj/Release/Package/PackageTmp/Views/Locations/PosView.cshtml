@@ -1,0 +1,61 @@
+﻿@model IEnumerable<YatraNepal.Models.Location>
+
+@{
+    ViewBag.Title = "PosView";
+}
+
+<h2>PosView</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.strAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.strAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Latitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Longitude)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
+<div id="gmap-dropdown" style="width: 600px; height: 400px"></div>
+
+@*<script>
+    var model ='@Html.Raw(Model)';
+    var LocsA = JSON.parse(model);
+    new Maplace({
+        locations: LocsA,
+        map_div: '#gmap-dropdown',
+        controls_title: 'Choose a location:',
+        listeners: {
+            click: function (map, event) {
+                alert('That was a click!');
+            }
+        }
+    }).Load();
+</script>*@

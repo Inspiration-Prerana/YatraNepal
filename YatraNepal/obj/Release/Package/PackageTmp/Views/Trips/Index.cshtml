@@ -1,0 +1,60 @@
+﻿@model IEnumerable<YatraNepal.Models.Trip>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<p>
+    @Html.ActionLink("Book", "Create", "Tickets")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Bus.VehicleId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndLocation.strAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartLocation.strAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bus.VehicleId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndLocation.strAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartLocation.strAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
